@@ -1,5 +1,4 @@
 #import "EBGrid.h"
-#import <EBFoundation/EBFoundation.h>
 
 EBGridOptions EBGridOptionsMake(CGFloat leftBorder, CGFloat rightBorder, CGFloat topBorder, CGFloat bottomBorder, CGSize cellSize, CGSize cellSpacing)
 {
@@ -30,7 +29,7 @@ NSUInteger EBGridRowCount(EBGridInfo gridInfo)
 CGSize EBGridContainerSize(EBGridInfo gridInfo)
 {
     NSUInteger rowCount = EBGridRowCount(gridInfo);
-    return NSMakeSize(gridInfo.containerWidth, gridInfo.gridOptions.topBorder + gridInfo.gridOptions.bottomBorder + (rowCount * gridInfo.gridOptions.cellSize.height) + ((rowCount - 1) * gridInfo.gridOptions.cellSpacing.height));
+    return CGSizeMake(gridInfo.containerWidth, gridInfo.gridOptions.topBorder + gridInfo.gridOptions.bottomBorder + (rowCount * gridInfo.gridOptions.cellSize.height) + ((rowCount - 1) * gridInfo.gridOptions.cellSpacing.height));
 }
 
 static CGFloat calcAdditionalXSpacing(EBGridInfo gridInfo)
@@ -47,7 +46,7 @@ CGRect EBGridRectForCellIndex(EBGridInfo gridInfo, NSUInteger cellIndex)
     NSUInteger xIndex = cellIndex % columnCount;
     NSUInteger yIndex = cellIndex / columnCount;
     CGFloat additionalXSpacing = (rowCount > 1 ? calcAdditionalXSpacing(gridInfo) : 0);
-    return NSMakeRect(gridInfo.gridOptions.leftBorder + additionalXSpacing + (xIndex * (gridInfo.gridOptions.cellSize.width + gridInfo.gridOptions.cellSpacing.width + additionalXSpacing)),
+    return CGRectMake(gridInfo.gridOptions.leftBorder + additionalXSpacing + (xIndex * (gridInfo.gridOptions.cellSize.width + gridInfo.gridOptions.cellSpacing.width + additionalXSpacing)),
         gridInfo.gridOptions.topBorder + (yIndex * (gridInfo.gridOptions.cellSize.height + gridInfo.gridOptions.cellSpacing.height)), gridInfo.gridOptions.cellSize.width, gridInfo.gridOptions.cellSize.height);
 }
 
@@ -102,10 +101,10 @@ BOOL EBGridMinMaxCellIndexesForRect(EBGridInfo gridInfo, CGRect rect, NSUInteger
     CGFloat combinedCellWidth = (gridInfo.gridOptions.cellSize.width + gridInfo.gridOptions.cellSpacing.width + additionalXSpacing);
     CGFloat combinedCellHeight = (gridInfo.gridOptions.cellSize.height + gridInfo.gridOptions.cellSpacing.height);
     
-    CGFloat minX = NSMinX(rect) - gridInfo.gridOptions.leftBorder - additionalXSpacing;
-    CGFloat maxX = NSMaxX(rect) - gridInfo.gridOptions.leftBorder - additionalXSpacing - 1;
-    CGFloat minY = NSMinY(rect) - gridInfo.gridOptions.topBorder;
-    CGFloat maxY = NSMaxY(rect) - gridInfo.gridOptions.topBorder - 1;
+    CGFloat minX = CGRectGetMinX(rect) - gridInfo.gridOptions.leftBorder - additionalXSpacing;
+    CGFloat maxX = CGRectGetMaxX(rect) - gridInfo.gridOptions.leftBorder - additionalXSpacing - 1;
+    CGFloat minY = CGRectGetMinY(rect) - gridInfo.gridOptions.topBorder;
+    CGFloat maxY = CGRectGetMaxY(rect) - gridInfo.gridOptions.topBorder - 1;
     
     NSInteger minXIndex = floor(minX / combinedCellWidth);
     NSInteger maxXIndex = floor(maxX / combinedCellWidth);

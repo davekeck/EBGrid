@@ -1,4 +1,10 @@
 #import <Foundation/Foundation.h>
+#import <EBFoundation/EBFoundation.h>
+#if EBTargetOSX
+#import <ApplicationServices/ApplicationServices.h>
+#elif EBTargetIOS
+#import <CoreGraphics/CoreGraphics.h>
+#endif
 
 typedef struct
 {
