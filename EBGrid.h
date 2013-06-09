@@ -1,5 +1,5 @@
 #import <Foundation/Foundation.h>
-#import <EBFoundation/EBFoundation.h>
+#import <EchoBravo/EBFoundation.h>
 #if EBTargetOSX
 #import <ApplicationServices/ApplicationServices.h>
 #elif EBTargetIOS
