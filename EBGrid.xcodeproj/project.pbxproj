@@ -200,7 +200,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(PROJECT_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = include/EchoBravo;
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 			};
 			name = Debug;
@@ -230,7 +230,7 @@
 					"-all_load",
 				);
 				PRODUCT_NAME = "$(PROJECT_NAME)";
-				PUBLIC_HEADERS_FOLDER_PATH = include/EchoBravo;
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PROJECT_NAME)";
 				SKIP_INSTALL = YES;
 				VALIDATE_PRODUCT = YES;
 			};
