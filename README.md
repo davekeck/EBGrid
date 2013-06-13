@@ -5,7 +5,6 @@ EBGrid is a collection of functions that factor-out grid-related math for views 
 ## Requirements
 
 - Mac OS 10.8 or iOS 6. (Earlier platforms have not been tested.)
-- Automatic reference counting (ARC) must be enabled for the source files.
 
 ## Integration
 
@@ -14,4 +13,4 @@ EBGrid is a collection of functions that factor-out grid-related math for views 
 3. In your target's "Build Phases" tab:
     * Add EBGrid as a dependency ("Target Dependencies" section)
     * Link against EBGrid ("Link Binary With Libraries" section)
-4. Add `#import <EchoBravo/EBGrid.h>` to your source files.
+4. Add `#import <EBGrid/EBGrid.h>` to your source files.
