@@ -12,5 +12,5 @@ EBGrid is a collection of functions that factor-out grid-related math for views 
 2. Drag EBGrid.xcodeproj into your project's file hierarchy.
 3. In your target's "Build Phases" tab:
     * Add EBGrid as a dependency ("Target Dependencies" section)
-    * Link against EBGrid ("Link Binary With Libraries" section)
+    * Link against libEBGrid.a ("Link Binary With Libraries" section)
 4. Add `#import <EBGrid/EBGrid.h>` to your source files.
