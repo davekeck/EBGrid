@@ -14,3 +14,11 @@ EBGrid is a collection of functions that factor-out grid-related math for views 
     * Add EBGrid as a dependency ("Target Dependencies" section)
     * Link against libEBGrid.a ("Link Binary With Libraries" section)
 4. Add `#import <EBGrid/EBGrid.h>` to your source files.
+
+## Credits
+
+EBGrid was created for [Lasso](http://las.so).
+
+## License
+
+EBGrid is available under the MIT license; see the LICENSE file for more information.
